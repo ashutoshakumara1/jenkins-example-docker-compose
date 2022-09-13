@@ -28,5 +28,10 @@ pipeline {
         sh 'curl http://localhost:3000/param?query=demo | jq'
       }
     }
+    stage('Status container') {
+      steps {
+        sh 'docker compose ps'
+      }
+    }
   }
 }
